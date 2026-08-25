@@ -1,0 +1,71 @@
+name: Rebrand index as Hebdar Tutoring
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebrand:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rebrand index.html
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+
+          replacements = {
+              "Noah's Tutoring Hub": "Hebdar Tutoring",
+              "Noah's Tutoring": "Hebdar Tutoring",
+              "Noahs Tutoring Hub": "Hebdar Tutoring",
+              "Noahs Tutoring": "Hebdar Tutoring",
+              "Noah Hub Site Chat": "Hebdar Tutoring Site Chat",
+              "Noah's Tutoring users": "Hebdar Tutoring community",
+              "noahstutoring": "hebdartutoring",
+              "noahs-tutoring": "hebdar-tutoring",
+              "noahs-watermark": "hebdar-watermark",
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          text = re.sub(
+              r'<img\b[^>]*(?:NoahsAmazingTutoringHelp|noahs-calculus-tutor)[^>]*>',
+              '', text, flags=re.I
+          )
+          text = re.sub(
+              r'<link\b[^>]*(?:NoahsAmazingTutoringHelp|noahs-calculus-tutor)[^>]*>',
+              '', text, flags=re.I
+          )
+          text = re.sub(
+              r'<meta\b[^>]+(?:NoahsAmazingTutoringHelp|noahs-calculus-tutor)[^>]*>',
+              '', text, flags=re.I
+          )
+          text = re.sub(
+              r"https?://(?:cdn\.jsdelivr\.net|raw\.githubusercontent\.com)/NoahsAmazingTutoringHelp/[^\"'\s<>]+",
+              '', text, flags=re.I
+          )
+
+          p.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "Rebrand index as Hebdar Tutoring and remove old Noah images"
+            git push
+          fi
