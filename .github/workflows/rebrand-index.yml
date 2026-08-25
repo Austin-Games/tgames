@@ -38,6 +38,7 @@ jobs:
           for old, new in replacements.items():
               text = text.replace(old, new)
 
+          # Remove old Noah branding images, but keep external game scripts working.
           text = re.sub(
               r'<img\b[^>]*(?:NoahsAmazingTutoringHelp|noahs-calculus-tutor)[^>]*>',
               '', text, flags=re.I
@@ -48,10 +49,6 @@ jobs:
           )
           text = re.sub(
               r'<meta\b[^>]+(?:NoahsAmazingTutoringHelp|noahs-calculus-tutor)[^>]*>',
-              '', text, flags=re.I
-          )
-          text = re.sub(
-              r"https?://(?:cdn\.jsdelivr\.net|raw\.githubusercontent\.com)/NoahsAmazingTutoringHelp/[^\"'\s<>]+",
               '', text, flags=re.I
           )
 
