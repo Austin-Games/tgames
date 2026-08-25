@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="#050505"/><rect x="70" y="70" width="1060" height="660" rx="28" fill="#111" stroke="#ff7a00" stroke-width="4"/><text x="600" y="210" text-anchor="middle" fill="#ff7a00" font-family="monospace" font-size="72" font-weight="bold">HEBDAR TUTORING</text><text x="600" y="290" text-anchor="middle" fill="#fff" font-family="monospace" font-size="44">WEB PROXY</text><text x="600" y="370" text-anchor="middle" fill="#aaa" font-family="monospace" font-size="24">Open the Hebdar Tutoring web proxy</text><a href="https://cdn.jsdelivr.net/gh/Austin-Games/tgames@main/index.html"><rect x="430" y="450" width="340" height="90" rx="18" fill="#ff7a00"/><text x="600" y="508" text-anchor="middle" fill="#050505" font-family="monospace" font-size="30" font-weight="bold">OPEN PROXY</text></a><text x="600" y="650" text-anchor="middle" fill="#777" font-family="monospace" font-size="18">Hebdar Tutoring • Austin-Games/tgames</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200 800">
+<rect width="1200" height="800" fill="#050505"/>
+<foreignObject x="0" y="0" width="1200" height="800">
+<div xmlns="http://www.w3.org/1999/xhtml" style="height:100vh;box-sizing:border-box;background:#050505;color:#fff;font-family:monospace;padding:60px">
+<style>
+.card{max-width:1000px;margin:auto;background:#111;border:2px solid #ff7a00;border-radius:28px;padding:42px;box-sizing:border-box;box-shadow:0 0 30px #ff7a0033}h1{color:#ff7a00;font-size:54px;margin:0 0 8px}p{color:#aaa;font-size:18px}.bar{display:flex;gap:10px;margin-top:30px}input{flex:1;background:#080808;border:2px solid #333;border-radius:12px;color:#fff;padding:16px;font:16px monospace}button{background:#ff7a00;border:0;border-radius:12px;padding:16px 24px;font:bold 16px monospace;cursor:pointer}iframe{width:100%;height:440px;margin-top:25px;border:1px solid #333;border-radius:15px;background:#fff}.status{margin-top:12px;color:#777}
+</style>
+<div class="card"><h1>HEBDAR TUTORING</h1><p>WEB PROXY • JSDELIVR EDITION</p><div class="bar"><input id="u" placeholder="https://example.com"/><button id="go">OPEN</button></div><div id="s" class="status">Ready</div><iframe id="v" sandbox="allow-forms allow-modals allow-popups allow-same-origin" title="Proxy viewer"></iframe></div>
+<script><![CDATA[
+(function(){
+ const u=document.getElementById('u'),g=document.getElementById('go'),v=document.getElementById('v'),s=document.getElementById('s');
+ function open(){let x=u.value.trim();if(!x)return;if(!/^https?:\/\//i.test(x))x='https://'+x;const target='https://api.allorigins.win/raw?url='+encodeURIComponent(x);s.textContent='Loading '+x;fetch(target).then(r=>{if(!r.ok)throw new Error('Fetch failed');return r.text()}).then(html=>{html=html.replace(/<script[\s\S]*?<\/script>/gi,'').replace(/<iframe[\s\S]*?<\/iframe>/gi,'').replace(/<object[\s\S]*?<\/object>/gi,'').replace(/<embed[^>]*>/gi,'');v.srcdoc=html;s.textContent='Loaded';}).catch(e=>{s.textContent='Could not load this site: '+e.message;});}
+ g.onclick=open;u.addEventListener('keydown',e=>{if(e.key==='Enter')open()});
+})();
+]]></script>
+</div>
+</foreignObject>
+</svg>
