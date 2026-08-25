@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#080b0f"/>
+  <rect x="55" y="45" width="1090" height="610" rx="24" fill="#11161c" stroke="#c27c15" stroke-width="2"/>
+  <text x="100" y="125" fill="#f2ab34" font-family="monospace" font-size="34" font-weight="bold">HEBDAR TUTORING</text>
+  <text x="100" y="170" fill="#f6f4ef" font-family="monospace" font-size="48" font-weight="bold">WEB PROXY</text>
+  <text x="100" y="215" fill="#aaa" font-family="monospace" font-size="18">Safe web reader • Learning • Resources • Tools</text>
+  <rect x="100" y="270" width="800" height="58" rx="10" fill="#080b0f" stroke="#555"/>
+  <text x="125" y="307" fill="#888" font-family="monospace" font-size="18">https://example.com</text>
+  <a href="https://austin-games.github.io/tgames/proxy.html">
+    <rect x="920" y="270" width="160" height="58" rx="10" fill="#c27c15"/>
+    <text x="1000" y="307" text-anchor="middle" fill="#fff" font-family="monospace" font-size="18" font-weight="bold">OPEN</text>
+  </a>
+  <text x="100" y="390" fill="#f2ab34" font-family="monospace" font-size="20">SAFE WEB READER</text>
+  <text x="100" y="430" fill="#aaa" font-family="monospace" font-size="17">Scripts and unsafe page elements are removed.</text>
+  <text x="100" y="465" fill="#aaa" font-family="monospace" font-size="17">Visible text is filtered for family-friendly viewing.</text>
+  <text x="100" y="500" fill="#aaa" font-family="monospace" font-size="17">Some websites may block proxy access.</text>
+  <text x="100" y="590" fill="#666" font-family="monospace" font-size="14">© 2026 Hebdar Tutoring</text>
+</svg>
